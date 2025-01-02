@@ -60,9 +60,9 @@
                         <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
                         <div
                             class="absolute left-0 flex-col bg-white border border-gray-200 rounded shadow-lg mt-2 z-50 min-w-[200px] dropdown-content">
-        <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
-    Home & Living Shelves
-</a>
+                            <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
+                                Home & Living Shelves
+                            </a>
 
                             <a href="kitchenanddining.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 bg-opacity-30">Kitchen & Dining Shelves</a>
                             <a href="garden.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 bg-opacity-30">Garden Shelves</a>
