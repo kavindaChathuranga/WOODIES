@@ -21,7 +21,8 @@
                     <h1 class="font-bold text-2xl mb-4">Create Account</h1>
                     <div class="flex gap-2 my-5">
                         <a herf class="border border -gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
-                        
+                        <a href="#" class="border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-google-plus-g"></i></a>
+
                     </div>
                 </form>
             </div>
