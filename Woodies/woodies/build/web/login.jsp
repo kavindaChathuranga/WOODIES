@@ -64,7 +64,8 @@
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1 class="font-bold text-2xl mb-4 text-white">Hello, Friend!</h1>
-                    
+                    <p class="text-sm font-light leading-5 tracking-wide mb-6 text-white">Enter your personal details and start journey with us</p>
+
                 </div>
             </div>
         </div>
