@@ -62,6 +62,9 @@
                     <p class="text-sm font-light leading-5 tracking-wide mb-6 text-white ">Enter your personal details and start journey with us</p>
                      <button class="ghost rounded-full border border-white bg-transparent text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signIn">Sign In</button>
                 </div>
+                <div class="overlay-panel overlay-right">
+                    
+                </div>
             </div>
         </div>
         </div>  
