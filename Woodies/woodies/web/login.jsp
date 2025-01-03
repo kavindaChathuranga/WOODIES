@@ -31,6 +31,7 @@
             <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
             <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
             <input type="password" placeholder="password" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
+            <button class="rounded-full border border-red-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-red-600">Sign Up</button>
             
         </div>  
     </body>
