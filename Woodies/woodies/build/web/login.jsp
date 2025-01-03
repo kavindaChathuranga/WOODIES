@@ -43,6 +43,7 @@
                     <a href="#" class="border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-google-plus-g"></i></a>
                 </div>
+                <span class="text-sm mb-4">or use your account</span>
                 </form>
             </div>
         </div>  
