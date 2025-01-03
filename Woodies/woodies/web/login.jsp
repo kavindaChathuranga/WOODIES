@@ -18,7 +18,7 @@
             <!-- Sign up form container-->
             <div class="form-container sign-up-container">
                 <form class="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
-                    
+                    <h1 class="font-bold text-2xl mb-4">Create Account</h1>
                 </form>
             </div>
             
