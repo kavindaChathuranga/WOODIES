@@ -44,6 +44,10 @@
                     <a href="#" class="border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-google-plus-g"></i></a>
                 </div>
                 <span class="text-sm mb-4">or use your account</span>
+                
+                <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded" />
+                <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded" />
+                
                 </form>
             </div>
         </div>  
