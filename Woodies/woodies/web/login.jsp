@@ -57,7 +57,9 @@
         <!-- Overlay Container -->   
         <div class="overlay-container">
             <div class="overlay">
-                
+                <div class="overlay-panel overlay-left">
+                    
+                </div>
             </div>
         </div>
         </div>  
