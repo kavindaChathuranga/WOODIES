@@ -24,15 +24,16 @@
                         <a herf class="border border -gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center"><i class="fab fa-google-plus-g"></i></a>
                     </div>
+                    
+                    <span class="text-sm mb-4">or use your email for registration</span>
+            
+                    <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
+                    <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
+                    <input type="password" placeholder="password" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
+                    <button class="rounded-full border border-red-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-red-600">Sign Up</button>
                 </form>
             </div>
-            <span class="text-sm mb-4">or use your email for registration</span>
-            
-            <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
-            <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
-            <input type="password" placeholder="password" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
-            <button class="rounded-full border border-red-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-red-600">Sign Up</button>
-            
+          
         </div>  
     </body>
 </html>
