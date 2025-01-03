@@ -58,6 +58,7 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
+                    <h1 class="font-bold text-2xl mb-4 text-white">Welcome back</h1>
                     
                 </div>
             </div>
