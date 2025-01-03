@@ -13,7 +13,7 @@
         <script src="https://kit.fontawesome.com/fc0bcca8a3.js" crossorigin="anonymous"></script>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body class="flex justify-center items-center min-h-screen bg-gray-100 font-[Montserrat] -mt-5 mb-12">
+        
     </body>
 </html>
