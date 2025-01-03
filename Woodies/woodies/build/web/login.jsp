@@ -48,6 +48,7 @@
                 <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded" />
                 <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded" />
                 
+                <a href="#" class="text-gray-700 text-sm no-underline mb-4">Forgot your password?</a>
                 </form>
             </div>
         </div>  
