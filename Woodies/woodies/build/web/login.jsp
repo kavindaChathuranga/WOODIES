@@ -49,6 +49,9 @@
                 <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded" />
                 
                 <a href="#" class="text-gray-700 text-sm no-underline mb-4">Forgot your password?</a>
+                
+                <button class="rounded-full border border-red-500 bg-red-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-red-600">Sign In</button>
+
                 </form>
             </div>
         </div>  
