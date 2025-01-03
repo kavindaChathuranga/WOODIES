@@ -61,6 +61,22 @@
             transform: translateX(0);
             transition: transform 0.6s ease-in-out;
         }
+        
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
     </style>
     <body class="flex justify-center items-center min-h-screen bg-gray-100 font-[Montserrat] -mt-5 mb-12">
         <div class="container bg-white rounded-lg shadow-2xl overflow-hidden w-[768px] max-w-full min-h-[480px] relative" id="container">
