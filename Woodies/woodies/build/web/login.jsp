@@ -33,7 +33,11 @@
                     <button class="rounded-full border border-red-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-red-600">Sign Up</button>
                 </form>
             </div>
-          
+            
+            <!-- Sign in form container-->
+            <div class="form-container sign-in-container">
+                
+            </div>
         </div>  
     </body>
 </html>
