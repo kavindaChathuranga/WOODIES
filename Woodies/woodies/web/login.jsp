@@ -28,7 +28,7 @@
             </div>
             <span class="text-sm mb-4">or use your email for registration</span>
             
-            <
+            <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
         </div>  
     </body>
 </html>
