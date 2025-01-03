@@ -76,6 +76,15 @@
             transform: translateX(0);
             transition: transform 0.6s ease-in-out;
         }
+        
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+        
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
 
     </style>
     <body class="flex justify-center items-center min-h-screen bg-gray-100 font-[Montserrat] -mt-5 mb-12">
