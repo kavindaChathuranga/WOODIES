@@ -63,6 +63,7 @@
                      <button class="ghost rounded-full border border-white bg-transparent text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
+                    <h1 class="font-bold text-2xl mb-4 text-white">Hello, Friend!</h1>
                     
                 </div>
             </div>
