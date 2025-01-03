@@ -17,7 +17,9 @@
         <div class="container bg-white rounded-lg shadow-2xl overflow-hidden w-[768px] max-w-full min-h-[480px] relative" id="container">
             <!-- Sign up form container-->
             <div class="form-container sign-up-container">
-                
+                <form class="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
+                    
+                </form>
             </div>
             
         </div>  
