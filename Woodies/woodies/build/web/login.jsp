@@ -37,7 +37,7 @@
             <!-- Sign in form container-->
             <div class="form-container sign-in-container">
                 <form class="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
-                    
+                <h1 class="font-bold text-2xl mb-4">Sign In</h1>  
                 </form>
             </div>
         </div>  
