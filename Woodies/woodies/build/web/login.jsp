@@ -123,9 +123,9 @@
                 <form class="bg-white flex flex-col px-12 h-full justify-center items-center text-center">
                     <h1 class="font-bold text-2xl mb-4">Create Account</h1>
                   
-                    <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
-                    <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
-                    <input type="password" placeholder="password" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded"/>
+                    <input type="text" placeholder="Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500""/>
+                    <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500""/>
+                    <input type="password" placeholder="password" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500""/>
                     <button class="rounded-full border border-yellow-500 bg-yellow-500 text-black text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign Up</button>
                     
                     <span class="text-sm mb-4">or use your email for registration</span>
@@ -143,8 +143,8 @@
                 <h1 class="font-bold text-2xl mb-4">Sign In</h1>  
                 
 
-                <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded" />
-                <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded" />
+                <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"" />
+                <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"" />
                 
                 <a href="#" class="text-gray-700 text-sm no-underline mb-4">Forgot your password?</a>
                 
