@@ -52,8 +52,8 @@
         }
         
         .overlay {
-            background: #ff416c;
-            background: linear-gradient(to right, #ff4b2b, #ff416c);
+            background: #E6D6C1;
+            background: linear-gradient(to right, #E5D098, #E6D6C1);
             position: relative;
             left: -100%;
             height: 100%;
