@@ -12,6 +12,8 @@
         <title>login  Page</title>
         <script src="https://kit.fontawesome.com/fc0bcca8a3.js" crossorigin="anonymous"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+         
     </head>
     <style>
         * {
@@ -114,7 +116,7 @@
         }
 
     </style>
-    <body class="flex justify-center items-center min-h-screen bg-gray-100 font-[Montserrat] -mt-5 mb-12">
+    <body class="flex justify-center items-center min-h-screen bg-gray-100 font-sans -mt-5 mb-12">
         <div class="container bg-white rounded-lg shadow-2xl overflow-hidden w-[768px] max-w-full min-h-[480px] relative" id="container">
             <!-- Sign up form container-->
             <div class="form-container sign-up-container">
