@@ -162,14 +162,14 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1 class="font-bold text-2xl mb-4 text-white">Welcome back</h1>
-                    <p class="text-sm font-light leading-5 tracking-wide mb-6 text-white ">Enter your personal details and start journey with us</p>
-                     <button class="ghost rounded-full border border-white bg-transparent text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signIn">Sign In</button>
+                    <h1 class="font-bold text-2xl mb-4 text-black">Welcome back</h1>
+                    <p class="text-sm font-light leading-5 tracking-wide mb-6 text-black ">Enter your personal details and start journey with us</p>
+                     <button class="ghost rounded-full border border-yellow-500 bg-transparent text-black text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signIn">Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1 class="font-bold text-2xl mb-4 text-white">Hello, Friend!</h1>
-                    <p class="text-sm font-light leading-5 tracking-wide mb-6 text-white">Enter your personal details and start journey with us</p>
-                    <button class="ghost rounded-full border border-white bg-transparent text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signUp">Sign Up</button>
+                    <h1 class="font-bold text-2xl mb-4 text-black">Hello, Friend!</h1>
+                    <p class="text-sm font-light leading-5 tracking-wide mb-6 text-black">Enter your personal details and start journey with us</p>
+                    <button class="ghost rounded-full border border-yellow-500 bg-transparent text-black text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-white/10" id="signUp">Sign Up</button>
                 </div>
             </div>
         </div>
