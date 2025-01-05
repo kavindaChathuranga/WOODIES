@@ -41,7 +41,7 @@
                         
                         <a href="#" class="text-gray-700 text-sm no-underline mb-4">Forgot your password?</a>
                         
-                        <button class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
+                        <button class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
                         
                         <span class="text-sm mb-2">or use your account</span>
                         <div class="flex gap-2 my-5">
