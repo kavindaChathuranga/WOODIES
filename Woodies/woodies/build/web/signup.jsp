@@ -38,5 +38,18 @@
                         </div>
                     </form>
                 </div>
+                
+                 <!-- Right side - Image and Sign In Button -->
+                <div class="bg-yellow-50 flex flex-col items-center justify-center p-8 relative">
+                    <img src="/api/placeholder/400/300" alt="Sign Up Image" class="rounded-lg mb-8"/>
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold mb-4">Already have an account?</h2>
+                        <p class="text-gray-600 mb-6">Sign in to access your account</p>
+                        <a href="signin.html" class="rounded-full border-2 border-yellow-500 text-yellow-500 text-xs font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-500 hover:text-white">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+            
     </body>
 </html>
