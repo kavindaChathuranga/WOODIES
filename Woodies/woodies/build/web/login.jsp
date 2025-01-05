@@ -20,7 +20,7 @@
             <div class="grid grid-cols-2 h-full">
                 <!-- Left side - Image and Sign Up Button -->
                 <div class="bg-yellow-50 flex flex-col items-center justify-center p-8 relative">
-                    <img src="resources/images/login_signup_image/login.png" alt="Sign In Image" class="rounded-lg mb-8 max-w-xs h-auto"/>
+                    <img src="resources/images/login_signup_image/login.png" alt="Sign In Image" class="rounded-lg mb-4 max-w-xs h-auto"/>
                     <div class="text-center">
                         <h2 class="text-xl font-semibold mb-4">Don't have an account?</h2>
                         <p class="text-gray-600 mb-6">Sign up to get started with us</p>
@@ -39,7 +39,7 @@
                             <i class="fas fa-eye-slash fa-sm absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600" id="signinTogglePassword"></i>
                         </div>
                         
-                        <a href="#" class="text-gray-700 text-sm no-underline mb-4">Forgot your password?</a>
+                        <a href="#" class="text-gray-700 text-sm no-underline mb-5">Forgot your password?</a>
                         
                         <button class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
                         
