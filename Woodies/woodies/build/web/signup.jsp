@@ -49,7 +49,19 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
+        
+        <script>
+            const signupTogglePassword = document.getElementById('signupTogglePassword');
+            const signupPassword = document.getElementById('signupPassword');
+
+            signupTogglePassword.addEventListener('click', function() {
+                const type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                signupPassword.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+        </script>
             
     </body>
 </html>
