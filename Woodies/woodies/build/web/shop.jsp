@@ -102,6 +102,8 @@
         </header>
 
         <h1><center>Shop</center></h1>
+        
+        
 
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
