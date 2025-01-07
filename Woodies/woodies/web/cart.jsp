@@ -41,7 +41,7 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="home.jsp" class="ext-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
                         <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
@@ -59,7 +59,7 @@
                     </nav>
                     <!-- Right Icons -->
                     <div class="flex items-center space-x-4">
-                        <a href="cart.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
+                        <a href="cart.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">
                             <i class="fas fa-shopping-cart h-6 w-6"></i>
                         </a>
                         <a href="user_dash.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">

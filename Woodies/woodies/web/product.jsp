@@ -14,9 +14,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     </head>
-
     <body class="bg-gray-50 font-sans">
-
         <!-- Navbar -->
         <header class="bg-white shadow">
             <!-- Internal CSS -->
@@ -36,7 +34,6 @@
                     color: #F59E0B; /* This is the hover color for CATEGORY */
                 }
             </style>
-
             <div class="bg-[#faf7f0] w-screen">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                     <!-- Logo -->
@@ -45,10 +42,10 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
+                        <a href="product.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -72,6 +69,8 @@
                     </div>
                 </div>
             </div>
+
+
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
@@ -107,7 +106,6 @@
         <main class="container mx-auto p-6">
             <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-6">
                 <img src="resources/images/slider_container/card2.jpg" alt="Product Image" class="w-[300px] h-[300px] rounded-lg">
-
                 <div class="md:ml-6 mt-6 md:mt-0 w-full md:w-1/2">
                     <h2 class="text-3xl font-bold text-gray-800">Wooden Shelf</h2>
                     <p class="text-gray-600 mt-4">A beautiful handcrafted wooden shelf that adds style and utility to any room. Perfect for displaying your favorite decor items or storing books.</p>
@@ -150,7 +148,6 @@
                 <!-- Image Containers -->
                 <div class="mt-8 flex flex-col md:flex-row gap-6">
                     <div class="md:w-1/2">
-
                         <img src="resources/images/slider_container/card2.jpg" alt="Image 1" class="w-full h-[300px] rounded-lg shadow-md">
                     </div>
                     <div class="md:w-1/2">
@@ -216,15 +213,6 @@
                         </div>
                     </a>
                 </div>
-
-                        <img src="https://via.placeholder.com/500x300" alt="Image 1" class="w-full h-auto rounded-lg shadow-md">
-                    </div>
-                    <div class="md:w-1/2">
-                        <img src="https://via.placeholder.com/500x300" alt="Image 2" class="w-full h-auto rounded-lg shadow-md">
-                    </div>
-                </div>
-            </div>
-
         </main>
 
         <!-- Footer -->

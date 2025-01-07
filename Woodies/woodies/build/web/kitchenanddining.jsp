@@ -34,7 +34,7 @@
                     color: #F59E0B; /* This is the hover color for CATEGORY */
                 }
             </style>
-           <div class="bg-[#faf7f0] w-screen">
+            <div class="bg-[#faf7f0] w-screen">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                     <!-- Logo -->
                     <a href="home.jsp" class="inline-block transform transition duration-200 hover:scale-105 hover:shadow-md hover:opacity-90 active:scale-95">
@@ -48,12 +48,12 @@
                         <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
-                            <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
+                            <a href="#" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
                             <div class="absolute left-0 flex-col bg-white border border-gray-200 rounded shadow-lg mt-2 z-50 min-w-[200px] dropdown-content">
                                 <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
                                     Home & Living Shelves
                                 </a>
-                                <a href="kitchenanddining.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Kitchen & Dining Shelves</a>
+                                <a href="kitchenanddining.jsp" class="block px-4 py-2 text-yellow-500 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Kitchen & Dining Shelves</a>
                                 <a href="garden.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Garden Shelves</a>
                             </div>
                         </div>
@@ -106,6 +106,6 @@
 
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
-        
+
     </body>
 </html>
