@@ -80,8 +80,11 @@
                     </div>
                 </div>
             </div>
+ dev
 
 
+
+ main
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
@@ -279,12 +282,52 @@
 
     <!-- style container -->
     <!-- Container for the heading and slogan -->
-    <div class="flex justify-center items-center h-[30vh] px-4">
+ dev
+    <div class="flex justify-center items-center h-[20vh] px-4">
+
+ main
         <div class="text-center">
             <p class="mt-2 text-xl text-gray-600">share your setup with</p>
             <h1 class="text-4xl font-semibold text-gray-800">#WOODIES</h1>
         </div>
     </div>
+ dev
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+        <!-- Image 1: Large image spanning two rows and two columns -->
+        <div class="col-span-2 row-span-2">
+            <img src="resources/images/slider_container/card4.jpg" alt="Image 1" class="w-full h-[500px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 2: Medium-sized image spanning two columns -->
+        <div class="col-span-2">
+            <img src="resources/images/slider_container/card1.jpg" alt="Image 2" class="w-full h-[240px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 3: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card2.jpg" alt="Image 3" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 4: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card3.jpg" alt="Image 4" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 5: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card4.jpg" alt="Image 5" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 6: Small image with hover effect -->
+        <div>
+            <div class="relative group">
+                <img src="resources/images/slider_container/card3.jpg" alt="Image 6" class="w-full h-[150px] object-cover rounded-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                    <span class="text-white text-sm font-semibold">Rocking Chair</span>
+                    <span class="text-white text-xs">$20.99</span>
+                </div>
+
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 md:mt-8 lg:mt-12">
         <div class="grid gap-4">
             <div>
@@ -328,13 +371,16 @@
             </div>
             <div>
                 <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+main
             </div>
         </div>
     </div>
+dev
 
 
 
 
+ main
     <!-- Footer -->
     <jsp:include page="footer.jsp"/>
 </body>

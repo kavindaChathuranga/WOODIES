@@ -6,7 +6,7 @@
         <div>
             <a href="home.jsp"><img src="resources/images/logo/woodies_logo.png" alt="Logo" class="h-16 w-auto mx-auto" /></a>
             <p class="mt-2 text-sm text-gray-600">
-                Crafting timeless wooden pieces that bring elegance and <br />
+                Crafting timeless wooden pieces that bring elegance and <br/>
                 charm to your home.
             </p>
         </div>
