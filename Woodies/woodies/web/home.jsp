@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
@@ -278,11 +279,13 @@
     <!-- style container -->
     <!-- Container for the heading and slogan -->
     <div class="flex justify-center items-center h-[20vh] px-4">
+
         <div class="text-center">
             <p class="mt-2 text-xl text-gray-600">share your setup with</p>
             <h1 class="text-4xl font-semibold text-gray-800">#WOODIES</h1>
         </div>
     </div>
+
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
         <!-- Image 1: Large image spanning two rows and two columns -->
@@ -318,6 +321,8 @@
                     <span class="text-white text-sm font-semibold">Rocking Chair</span>
                     <span class="text-white text-xs">$20.99</span>
                 </div>
+
+
             </div>
         </div>
     </div>

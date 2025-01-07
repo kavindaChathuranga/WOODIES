@@ -80,6 +80,11 @@
                     </div>
                 </div>
             </div>
+ dev
+
+
+
+ main
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
@@ -277,12 +282,16 @@
 
     <!-- style container -->
     <!-- Container for the heading and slogan -->
+ dev
     <div class="flex justify-center items-center h-[20vh] px-4">
+
+ main
         <div class="text-center">
             <p class="mt-2 text-xl text-gray-600">share your setup with</p>
             <h1 class="text-4xl font-semibold text-gray-800">#WOODIES</h1>
         </div>
     </div>
+ dev
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
         <!-- Image 1: Large image spanning two rows and two columns -->
@@ -318,10 +327,60 @@
                     <span class="text-white text-sm font-semibold">Rocking Chair</span>
                     <span class="text-white text-xs">$20.99</span>
                 </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 md:mt-8 lg:mt-12">
+        <div class="grid gap-4">
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+            </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+main
             </div>
         </div>
     </div>
+dev
 
+
+
+
+ main
     <!-- Footer -->
     <jsp:include page="footer.jsp"/>
 </body>
