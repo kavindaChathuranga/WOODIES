@@ -45,41 +45,41 @@
                     color: #F59E0B; /* This is the hover color for CATEGORY */
                 }
             </style>
-            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <!-- Logo -->
-                <a href="home.jsp" class="inline-block transform transition duration-200 hover:scale-105 hover:shadow-md hover:opacity-90 active:scale-95">
-                    <img src="resources/images/logo/woodies_logo.png" alt="Logo" class="h-10 w-auto" />
-                </a>
-                <!-- Navigation list -->
-                <nav class="flex items-center space-x-6">
-                    <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
-                    <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
-                    <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                    <!-- Category with Dropdown -->
-                    <div class="relative dropdown" id="categoryDropdown">
-                        <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
-                        <div
-                            class="absolute left-0 flex-col bg-white border border-gray-200 rounded shadow-lg mt-2 z-50 min-w-[200px] dropdown-content">
-        <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
-    Home & Living Shelves
-</a>
-
-                            <a href="kitchenanddining.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 bg-opacity-30">Kitchen & Dining Shelves</a>
-                            <a href="garden.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 bg-opacity-30">Garden Shelves</a>
+            <div class="bg-[#faf7f0] w-screen">
+                <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <!-- Logo -->
+                    <a href="home.jsp" class="inline-block transform transition duration-200 hover:scale-105 hover:shadow-md hover:opacity-90 active:scale-95">
+                        <img src="resources/images/logo/woodies_logo.png" alt="Logo" class="h-10 w-auto" />
+                    </a>
+                    <!-- Navigation list -->
+                    <nav class="flex items-center space-x-6">
+                        <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
+                        <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
+                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
+                        <!-- Category with Dropdown -->
+                        <div class="relative dropdown" id="categoryDropdown">
+                            <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
+                            <div class="absolute left-0 flex-col bg-white border border-gray-200 rounded shadow-lg mt-2 z-50 min-w-[200px] dropdown-content">
+                                <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
+                                    Home & Living Shelves
+                                </a>
+                                <a href="kitchenanddining.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Kitchen & Dining Shelves</a>
+                                <a href="garden.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Garden Shelves</a>
+                            </div>
                         </div>
+                    </nav>
+                    <!-- Right Icons -->
+                    <div class="flex items-center space-x-4">
+                        <a href="cart.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
+                            <i class="fas fa-shopping-cart h-6 w-6"></i>
+                        </a>
+                        <a href="user_dash.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
+                            <i class="fas fa-user h-6 w-6"></i>
+                        </a>
                     </div>
-                </nav>
-                <!-- Right Icons -->
-                <div class="flex items-center space-x-4">
-                    <a href="cart.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
-                        <i class="fas fa-shopping-cart h-6 w-6"></i>
-                    </a>
-                    <a href="user_dash.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
-                        <i class="fas fa-user h-6 w-6"></i>
-                    </a>
                 </div>
             </div>
-
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
@@ -276,55 +276,51 @@
     </div>
 
     <!-- style container -->
-
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card3.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card2.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="resources/images/slider_container/card1.jpg" alt="">
-            </div>
+    <!-- Container for the heading and slogan -->
+    <div class="flex justify-center items-center h-[20vh] px-4">
+        <div class="text-center">
+            <p class="mt-2 text-xl text-gray-600">share your setup with</p>
+            <h1 class="text-4xl font-semibold text-gray-800">#WOODIES</h1>
         </div>
     </div>
 
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+        <!-- Image 1: Large image spanning two rows and two columns -->
+        <div class="col-span-2 row-span-2">
+            <img src="resources/images/slider_container/card4.jpg" alt="Image 1" class="w-full h-[500px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 2: Medium-sized image spanning two columns -->
+        <div class="col-span-2">
+            <img src="resources/images/slider_container/card1.jpg" alt="Image 2" class="w-full h-[240px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 3: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card2.jpg" alt="Image 3" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 4: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card3.jpg" alt="Image 4" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 5: Small image -->
+        <div>
+            <img src="resources/images/slider_container/card4.jpg" alt="Image 5" class="w-full h-[150px] object-cover rounded-lg">
+        </div>
+
+        <!-- Image 6: Small image with hover effect -->
+        <div>
+            <div class="relative group">
+                <img src="resources/images/slider_container/card3.jpg" alt="Image 6" class="w-full h-[150px] object-cover rounded-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                    <span class="text-white text-sm font-semibold">Rocking Chair</span>
+                    <span class="text-white text-xs">$20.99</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <jsp:include page="footer.jsp"/>
