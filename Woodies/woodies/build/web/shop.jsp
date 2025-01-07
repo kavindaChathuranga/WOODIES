@@ -66,7 +66,7 @@
                             <i class="fas fa-user h-6 w-6"></i>
                         </a>
                     </div>
-                </div>
+                </div>               
             </div>
 
             <!-- Internal JavaScript -->
@@ -100,25 +100,119 @@
                 });
             </script>
         </header>
-
-        <h1><center>Shop</center></h1>
-        <div class="max-w-6xl mx-auto p-6"
+        <div class="max-w-6xl mx-auto p-6">
         <!-- Product Grid -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-             <!-- Product Card 1 -->
+            <!-- Product Card 1 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
                     <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
-                </div>  
+                </div>
                 <div class="p-4">
                     <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
                     <p class="mt-1 text-xs text-gray-500">home</p>
                     <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
                 </div>
             </div>
+            <!-- Product Card 2 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+            
+             <!-- Product Card 3 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+             
+              <!-- Product Card 3 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+              
+             <!-- Product Card 4 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+             
+              <!-- Product Card 5 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+              
+               <!-- Product Card 6 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
+               
+                <!-- Product Card 7 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rs 2.500.000</p>
+                </div>
+            </div>
+        </div>
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
+        </div>
+         
+
+        
+        
         
     </body>
 </html>
