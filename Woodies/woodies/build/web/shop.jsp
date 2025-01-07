@@ -111,7 +111,12 @@
                     <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>  
-
+                <div class="p-4">
+                    <h3 class="text-sm font-medium text-gray-900">Stylhome</h3>
+                    <p class="mt-1 text-xs text-gray-500">home</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">Rp 2.500.000</p>
+                </div>
+            </div>
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
         
