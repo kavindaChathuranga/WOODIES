@@ -32,6 +32,12 @@
                 .dropdown:hover .dropdown-text {
                     color: #F59E0B; /* This is the hover color for CATEGORY */
                 }
+                .card-zoom img {
+                    transition: transform 0.3s ease;
+                }
+                .card-zoom:hover img {
+                    transform: scale(1.05);
+                }
             </style>
             <div class="bg-[#faf7f0] w-screen">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -106,7 +112,7 @@
             <!-- Product Card 1 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -118,7 +124,7 @@
             <!-- Product Card 2 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -131,7 +137,7 @@
              <!-- Product Card 3 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -144,7 +150,7 @@
               <!-- Product Card 3 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -157,7 +163,7 @@
              <!-- Product Card 4 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -170,7 +176,7 @@
               <!-- Product Card 5 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
@@ -183,7 +189,7 @@
                <!-- Product Card 6 -->
             <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
                 <div class="relative">
-                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    <img src="resources/images/slider_container/card1.jpg" alt="Stylhome" class="w-full h-48 object-cover"/>
                     
                 </div>
                 <div class="p-4">
