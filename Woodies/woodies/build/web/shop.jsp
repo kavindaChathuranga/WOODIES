@@ -102,8 +102,15 @@
         </header>
 
         <h1><center>Shop</center></h1>
-        
-        
+        <div class="max-w-6xl mx-auto p-6"
+        <!-- Product Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+             <!-- Product Card 1 -->
+            <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                <div class="relative">
+                    <img src="img/boxengasse.png" alt="Stylhome" class="w-full h-48 object-cover"/>
+                    
+                </div>  
 
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
