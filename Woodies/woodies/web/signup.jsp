@@ -20,7 +20,7 @@
             <!-- Left side - Sign Up Form -->
             <div class="grid grid-cols-2 h-full">
                 <div class="p-8">
-                    <form class="flex flex-col h-full justify-center items-center text-center">
+                    <form method="POST" action="registration.jsp" class="flex flex-col h-full justify-center items-center text-center">
                         <h1 class="font-bold text-2xl mb-4">Create Account</h1>
                       
                         <input type="text" placeholder="First Name" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500"/>
