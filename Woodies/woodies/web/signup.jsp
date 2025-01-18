@@ -30,11 +30,10 @@
                             <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-6 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" id="signupPassword"/>
                             <i class="fas fa-eye-slash fa-sm absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600" id="signupTogglePassword"></i>
                         </div>
-                        <a 
-                            href="login.jsp" 
-                            class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5 inline-block text-center">
+                       <button type="submit" class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5 inline-block text-center" >
                             Sign Up
-                        </a>                        
+                         </button>
+                                                           
                         
                     </form>
                 </div>
