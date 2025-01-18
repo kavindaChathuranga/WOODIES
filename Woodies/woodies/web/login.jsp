@@ -36,7 +36,7 @@
                         <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" />
                         <div class="relative w-full">
                             <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" id="signinPassword"/>
-                            <i class="fas fa-eye-slash fa-sm absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600" id="signinTogglePassword"></i>
+                            <i  id="signinTogglePassword"></i>
                         </div>
                         
                         <a href="#" class="text-gray-700 text-sm no-underline mb-5">Forgot your password?</a>
