@@ -30,7 +30,7 @@
 
                 <!-- Right side - Sign In Form -->
                 <div class="p-8">
-                    <form class="flex flex-col h-full justify-center items-center text-center">
+                    <form method="POST" action="login_back.jsp" class="flex flex-col h-full justify-center items-center text-center">
                         <h1 class="font-bold text-2xl mb-4">Sign In</h1>  
 
                         <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" />
