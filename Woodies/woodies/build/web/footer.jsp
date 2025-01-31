@@ -23,7 +23,7 @@
         <div>
             <h3 class="text-lg font-semibold text-gray-600">Stay Connected</h3>
             <div class="flex justify-center space-x-4 mt-2">
-                <a href="https://www.facebook.com/share/1DEuTfUVpd/?mibextid=LQQJ4d" class="text-gray-600 hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100088502225041" class="text-gray-600 hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-gray-600 hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
                 <a href="#" class="text-gray-600 hover:text-pink-300"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="text-gray-600 hover:text-blue-300"><i class="fab fa-facebook-messenger"></i></a>

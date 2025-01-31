@@ -41,10 +41,9 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -59,7 +58,7 @@
                     </nav>
                     <!-- Right Icons -->
                     <div class="flex items-center space-x-4">
-                        <a href="cart.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
+                        <a href="cart.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">
                             <i class="fas fa-shopping-cart h-6 w-6"></i>
                         </a>
                         <a href="user_dash.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
@@ -74,7 +73,7 @@
                 const categoryDropdown = document.getElementById('categoryDropdown');
                 const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
                 let hideTimeout;
-                
+
                 // Show dropdown on hover
                 categoryDropdown.addEventListener('mouseenter', () => {
                     clearTimeout(hideTimeout); // Cancel any hide delay
@@ -101,10 +100,114 @@
             </script>
         </header>
 
-        <!-- Card body -->
-    <center><h1>Checkout</h1></center>
 
-    <!-- Footer -->
-    <jsp:include page="footer.jsp"/>
-</body>
+        <!-- Banner Section -->
+        <div class="relative">
+            <img src="resources/images/heading_cover/cover.png" alt="Checkout Banner" class="w-full h-[328px] object-cover">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-center">
+                <h1 class="text-4xl font-bold text-white">Checkout</h1>
+                <p class="text-white text-sm mt-2">
+                    <a href="home.jsp" class="hover:text-[#b68f2f]">Home</a> &gt; <span><a href="cart.jsp" class="hover:text-[#b68f2f]">Cart</a></span> &gt; <span>Checkout</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Checkout Section -->
+        <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-16">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Billing details</h2>
+                <form>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="First Name" class="border p-2 rounded">
+                        <input type="text" placeholder="Last Name" class="border p-2 rounded"> 
+                    </div>
+                    <input type="text" placeholder="Company Name (Optional)" class="w-full border p-2 rounded mt-4">
+
+                    <input type="text" placeholder="Address" class="w-full border p-2 rounded mt-4">
+                    <select class="w-full border p-2 rounded mt-4">
+                        <option>Western Province</option>
+                        <option>Central Province</option>
+                        <option>Southern Province</option>
+                        <option>Eastern Province</option>
+                        <option>Northern Province</option>
+                        <option>North Western Province</option>
+                        <option>North Central Province</option>
+                        <option>Uva Province</option>
+                        <option>Sabaragamuwa Province</option>
+                        <option>Western Province</option>
+                    </select>
+                    <input type="text" placeholder="ZIP code" class="w-full border p-2 rounded mt-4">
+                    <input type="text" placeholder="Phone" class="w-full border p-2 rounded mt-4">
+                    <input type="email" placeholder="Email address" class="w-full border p-2 rounded mt-4">
+                    <textarea placeholder="Additional information" class="w-full border p-2 rounded mt-4"></textarea>
+                </form>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Product</h2>
+                <div class="border p-4 rounded">
+                    <p>Asgaard sofa x 1</p>
+                    <p>Subtotal: <strong>Rs. 250,000.00</strong></p>
+                    <p class="flex justify-between text-yellow-500 font-bold">
+                        <span>Total:</span>
+                        <strong>Rs. 250,000.00</strong>
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <p>Cash On Delivery</p>
+                </div>
+                <a href="place_order.jsp"><button class="bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 px-4 py-2 rounded mt-4 ">Place order</button></a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="bg-[#faf7f0] py-10 border-t border-gray-200">
+            <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Feature 1 -->
+                <div class="flex items-center md:items-start">
+                    <div class="text-yellow-500 text-4xl mr-4">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">High Quality</h3>
+                        <p class="text-gray-600 text-sm">crafted from top materials</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex items-center md:items-start">
+                    <div class="text-yellow-500 text-4xl mr-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">Warranty Protection</h3>
+                        <p class="text-gray-600 text-sm">Over 2 years</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex items-center md:items-start">
+                    <div class="text-yellow-500 text-4xl mr-4">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">Free Shipping</h3>
+                        <p class="text-gray-600 text-sm">Order over 150$</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex items-center md:items-start">
+                    <div class="text-yellow-500 text-4xl mr-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">24 / 7 Support</h3>
+                        <p class="text-gray-600 text-sm">Dedicated support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Footer -->
+        <jsp:include page="footer.jsp"/>
+    </body>
 </html>

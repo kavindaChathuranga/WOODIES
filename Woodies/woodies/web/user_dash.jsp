@@ -36,10 +36,9 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-yellow-500 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -113,15 +112,15 @@
                     <div class="space-y-4">
                         <div>
                             <label for="name" class="block text-gray-600 font-medium">Name:</label>
-                            <input type="text" id="name" value="John Doe" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            <input type="text" id="name" value="Kamal" class="w-full border rounded-lg p-2 text-gray-700" readonly>
                         </div>
                         <div>
                             <label for="email" class="block text-gray-600 font-medium">Email:</label>
-                            <input type="email" id="email" value="john.doe@example.com" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            <input type="email" id="email" value="kamal@example.com" class="w-full border rounded-lg p-2 text-gray-700" readonly>
                         </div>
                         <div>
                             <label for="phone" class="block text-gray-600 font-medium">Phone:</label>
-                            <input type="tel" id="phone" value="+123 456 7890" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            <input type="tel" id="phone" value="0764567890" class="w-full border rounded-lg p-2 text-gray-700" readonly>
                         </div>
                     </div>
                     <div class="flex space-x-4 mt-4">
@@ -167,7 +166,7 @@
             <div class="bg-white shadow rounded-lg p-6">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">Address Book</h2>
                 <div class="mb-4 p-4 bg-gray-50 border rounded-lg flex justify-between">
-                    <p class="text-gray-600">123 Main Street, Cityville, USA</p>
+                    <p class="text-gray-600">123 Main Street, Badulla</p>
                     <div class="space-x-2">
                         <button class="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600">Edit</button>
                         <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">Delete</button>

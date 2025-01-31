@@ -1,3 +1,5 @@
+
+
 <%-- 
     Document   : login
     Created on : Jan 3, 2025, 10:49:49 PM
@@ -30,24 +32,28 @@
 
                 <!-- Right side - Sign In Form -->
                 <div class="p-8">
-                    <form class="flex flex-col h-full justify-center items-center text-center">
+                    <form method="POST" action="login_back.jsp" class="flex flex-col h-full justify-center items-center text-center">
                         <h1 class="font-bold text-2xl mb-4">Sign In</h1>  
-
-                        <input type="email" placeholder="Email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+                         <%                                                      //change
+                            if(request.getParameter("s")!=null){
+                                if(request.getParameter("s").equals("0")){
+                        %>
+                        <h6 style='color:red'>Incorrect username or password</h6>
+                        <%
+                                }
+                            }
+                        %>
+                        <br>
+                        <input type="email" placeholder="Email" name="email" class="bg-gray-100 border-none py-3 px-4 mb-3 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" />
                         <div class="relative w-full">
-                            <input type="password" placeholder="Password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" id="signinPassword"/>
-                            <i class="fas fa-eye-slash fa-sm absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600" id="signinTogglePassword"></i>
+                            <input type="password" placeholder="Password" name="password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" id="signinPassword"/>
+                            <i  id="signinTogglePassword"></i>
                         </div>
                         
                         <a href="#" class="text-gray-700 text-sm no-underline mb-5">Forgot your password?</a>
                         
-                        <button class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
-                        
-                        <span class="text-sm mb-2">or use your account</span>
-                        <div class="flex gap-2 my-5">
-                            <a href="#" class="border border-yellow-200 rounded-full w-10 h-10 flex items-center justify-center transition hover:bg-yellow-200"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="border border-yellow-200 rounded-full w-10 h-10 flex items-center justify-center transition hover:bg-yellow-200"><i class="fab fa-google"></i></a>
-                        </div>
+                        <button type="submit" class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
+                       
                     </form>
                 </div>
             </div>

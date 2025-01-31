@@ -4,7 +4,14 @@
     Author     : Kavinda
 --%>
 
+<%@page import="java.sql.Connection"%>
+<%@page import="java.util.List"%>
+<%@page import="app.classes.DbConnector"%>
+<%@page import="app.classes.Products"%>
+<%@page import="app.classes.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%!User user = new User();
+    Products products = new Products();%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,6 +38,12 @@
 
                 .dropdown:hover .dropdown-text {
                     color: #F59E0B; /* This is the hover color for CATEGORY */
+                }
+                .card-zoom img {
+                    transition: transform 0.3s ease;
+                }
+                .card-zoom:hover img {
+                    transform: scale(1.05);
                 }
             </style>
             <div class="bg-[#faf7f0] w-screen">
@@ -66,7 +79,7 @@
                             <i class="fas fa-user h-6 w-6"></i>
                         </a>
                     </div>
-                </div>
+                </div>               
             </div>
 
             <!-- Internal JavaScript -->
@@ -101,10 +114,73 @@
             </script>
         </header>
 
-        <h1><center>Shop</center></h1>
+        <!-- Banner Section -->
+        <div class="relative">
+            <img src="resources/images/heading_cover/cover.png" alt="Checkout Banner" class="w-full h-[328px] object-cover">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-center">
+                <h1 class="text-4xl font-bold text-white">Shop</h1>
+                <p class="text-white text-sm mt-2">
+                    <a href="home.jsp" class="hover:text-[#b68f2f]">Home</a> &gt; <span>Shop</span>
+                </p>
+            </div>
+        </div>
 
-        <!-- Footer -->
-        <jsp:include page="footer.jsp"/>
-        
+        <!-- Shop Title Section -->
+        <div class="relative w-full h-48 flex items-center justify-center mb-12">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Shop Collection</h1>
+                <p class="text-lg text-gray-600">Discover our handcrafted wooden furniture</p>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto p-6">
+            
+            <!-- Product Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <%
+                    Connection con = null;
+                    try {
+                        con = DbConnector.getConnection();
+                        List<Products> productList = products.getAllProducts(con);
+                        for (Products p : productList) {
+                %>
+                <!-- Product Card -->
+                <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom mt-8">
+                    <div class="relative">
+                        <img src="<%=p.getImage_url()%>" alt="<%=p.getName()%>" class="w-full h-48 object-cover"/>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900"><%=p.getName()%></h3>
+                        <p class="mt-1 text-xs text-gray-500"><%=p.getCategory()%></p>
+                        <p class="mt-1 text-sm font-medium text-gray-900">Rs. <%=p.getPrice()%></p>
+                    </div>
+                </div>
+                <%
+                        }
+                    } catch (Exception e) {
+                        out.println("<p>Error loading products: " + e.getMessage() + "</p>");
+                        e.printStackTrace();
+                    } finally {
+                        if (con != null) {
+                            try {
+                                con.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                %>
+
+
+
+            </div>
+            <!-- Footer -->
+            <jsp:include page="footer.jsp"/>
+        </div>
+
+
+
+
+
     </body>
 </html>

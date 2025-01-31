@@ -44,7 +44,6 @@
                         <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -100,6 +99,17 @@
                 });
             </script>
         </header>
+
+        <!-- Banner Section -->
+        <div class="relative">
+            <img src="resources/images/heading_cover/cover.png" alt="Checkout Banner" class="w-full h-[328px] object-cover">
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-center">
+                <h1 class="text-4xl font-bold text-white">Garden</h1>
+                <p class="text-white text-sm mt-2">
+                    <a href="home.jsp" class="hover:text-[#b68f2f]">Home</a> &gt; <span><a href="home.jsp" class="hover:text-[#b68f2f]">Category</a></span> &gt; <span>Garden</span>
+                </p>
+            </div>
+        </div>
 
         <h1><center>Garden</center></h1>
 
