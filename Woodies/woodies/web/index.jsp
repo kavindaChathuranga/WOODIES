@@ -1,3 +1,15 @@
+
+<%
+    // Check if user is already logged in
+    Integer userId = (Integer) session.getAttribute("user_id");
+    if (userId != null) {
+        // User is logged in, redirect to home page
+        response.sendRedirect("home.jsp");
+        return;
+    }
+%>
+
+
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

@@ -1,3 +1,19 @@
+<%@page import="java.sql.Connection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="app.classes.DbConnector"%>
+<%@page import="app.classes.AuthenticationManager"%>
+<%
+    // Check if user is authenticated
+    if (session.getAttribute("user_id") == null) {
+        // Try persistent login
+        Connection conn = DbConnector.getConnection();
+        if (!AuthenticationManager.validateRememberMeToken(request, response, conn)) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -328,5 +344,8 @@
 
     <!-- Footer -->
     <jsp:include page="footer.jsp"/>
+    <div class="user-section">
+            <a href="logout.jsp">Logout</a>
+        </div>
 </body>
 </html>

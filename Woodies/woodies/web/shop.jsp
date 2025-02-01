@@ -134,9 +134,9 @@
         </div>
 
         <div class="max-w-6xl mx-auto p-6">
-            
+
             <!-- Product Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
                 <%
                     Connection con = null;
                     try {
@@ -170,17 +170,9 @@
                         }
                     }
                 %>
-
-
-
             </div>
-            <!-- Footer -->
-            <jsp:include page="footer.jsp"/>
         </div>
-
-
-
-
-
+        <!-- Footer -->
+        <jsp:include page="footer.jsp"/>
     </body>
 </html>

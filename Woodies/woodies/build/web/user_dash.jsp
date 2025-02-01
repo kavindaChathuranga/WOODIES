@@ -1,4 +1,44 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.util.List"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="app.classes.User" %>
+<%@ page import="app.classes.DbConnector" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="app.classes.Order" %>
+
+<%
+    // Get the user ID from session
+    Integer userId = (Integer) session.getAttribute("user_id");
+    User user = new User();
+    String firstName = "";
+    String lastName = "";
+    String email = "";
+
+    if (userId != null) {
+        user.setId(userId);
+        Connection con = null;
+        try {
+            con = DbConnector.getConnection();
+            user = user.getUserById(con);
+            firstName = user.getFirstname();
+            lastName = user.getLastname();
+            email = user.getEmail();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,29 +109,25 @@
                 const categoryDropdown = document.getElementById('categoryDropdown');
                 const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
                 let hideTimeout;
-
                 // Show dropdown on hover
                 categoryDropdown.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel any hide delay
-                    dropdownContent.classList.add('show'); // Show dropdown
+                clearTimeout(hideTimeout); // Cancel any hide delay
+                dropdownContent.classList.add('show'); // Show dropdown
                 });
-
                 // Hide dropdown with delay on mouse leave
                 categoryDropdown.addEventListener('mouseleave', () => {
-                    hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                hideTimeout = setTimeout(() => {
+                dropdownContent.classList.remove('show'); // Hide dropdown
+                }, 200); // Delay time in milliseconds (500ms)
                 });
-
                 // Keep the dropdown visible when hovering over the dropdown itself
                 dropdownContent.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel hide delay
+                clearTimeout(hideTimeout); // Cancel hide delay
                 });
-
                 dropdownContent.addEventListener('mouseleave', () => {
-                    hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                hideTimeout = setTimeout(() => {
+                dropdownContent.classList.remove('show'); // Hide dropdown
+                }, 200); // Delay time in milliseconds (500ms)
                 });
             </script>
         </header>
@@ -109,57 +145,114 @@
             <div class="bg-white shadow rounded-lg p-6 mb-6">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">User Profile</h2>
                 <div>
-                    <div class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-600 font-medium">Name:</label>
-                            <input type="text" id="name" value="Kamal" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                    <form id="profileForm" method="post" action="UpdateProfileServlet">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="firstname" class="block text-gray-600 font-medium">First Name:</label>
+                                <input type="text" id="firstname" name="firstname" value="<%= firstName%>" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            </div>
+                            <div>
+                                <label for="lastname" class="block text-gray-600 font-medium">Last Name:</label>
+                                <input type="text" id="lastname" name="lastname" value="<%= lastName%>" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-600 font-medium">Email:</label>
+                                <input type="email" id="email" name="email" value="<%= email%>" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="block text-gray-600 font-medium">Email:</label>
-                            <input type="email" id="email" value="kamal@example.com" class="w-full border rounded-lg p-2 text-gray-700" readonly>
+                        <div class="flex space-x-4 mt-4">
+                            <button type="button" id="edit-profile" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Edit Profile</button>
+                            <button type="submit" id="save-profile" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 hidden">Save Changes</button>
                         </div>
-                        <div>
-                            <label for="phone" class="block text-gray-600 font-medium">Phone:</label>
-                            <input type="tel" id="phone" value="0764567890" class="w-full border rounded-lg p-2 text-gray-700" readonly>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4 mt-4">
-                        <button id="edit-profile" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Edit Profile</button>
-                        <button id="save-profile" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 hidden">Save Changes</button>
-                    </div>
+                    </form>
                 </div>
             </div>
+
+            <script>
+                const editButton = document.getElementById('edit-profile');
+                const saveButton = document.getElementById('save-profile');
+                const inputs = document.querySelectorAll('#firstname, #lastname, #email');
+                const form = document.getElementById('profileForm');
+                editButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                inputs.forEach(input => input.removeAttribute('readonly'));
+                editButton.classList.add('hidden');
+                saveButton.classList.remove('hidden');
+                });
+                form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                try {
+                const formData = new FormData(form);
+                const response = await fetch('UpdateProfileServlet', {
+                method: 'POST',
+                        body: formData
+                });
+                if (response.ok) {
+                inputs.forEach(input => input.setAttribute('readonly', true));
+                editButton.classList.remove('hidden');
+                saveButton.classList.add('hidden');
+                alert('Profile updated successfully!');
+                } else {
+                alert('Failed to update profile. Please try again.');
+                }
+                } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while updating the profile.');
+                }
+                });</script>
 
             <!-- Order History Section -->
             <div class="bg-white shadow rounded-lg p-6 mb-6">
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">Order History</h2>
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th class="border-b p-3 text-gray-600">Order ID</th>
-                            <th class="border-b p-3 text-gray-600">Product</th>
-                            <th class="border-b p-3 text-gray-600">Status</th>
-                            <th class="border-b p-3 text-gray-600">Date</th>
-                            <th class="border-b p-3 text-gray-600">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="hover:bg-gray-50">
-                            <td class="border-b p-3">12345</td>
-                            <td class="border-b p-3">Wooden Wall Shelf</td>
-                            <td class="border-b p-3 text-green-500">Delivered</td>
-                            <td class="border-b p-3">2025-01-01</td>
-                            <td class="border-b p-3">Rs 4000.00</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="border-b p-3">12346</td>
-                            <td class="border-b p-3">Floating Shelf</td>
-                            <td class="border-b p-3 text-yellow-500">Pending</td>
-                            <td class="border-b p-3">2025-01-05</td>
-                            <td class="border-b p-3">Rs 2500.00</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <%
+                    List<Order> userOrders = null;
+                    Connection orderCon = null;
+                    try {
+                        orderCon = DbConnector.getConnection();
+                        userOrders = Order.getUserOrders(orderCon, user);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (orderCon != null) {
+                            try {
+                                orderCon.close();
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                %>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border-b p-3 text-gray-600">Order No</th>
+                                <th class="border-b p-3 text-gray-600">Date</th>
+                                <th class="border-b p-3 text-gray-600">Status</th>
+                                <th class="border-b p-3 text-gray-600">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (userOrders != null && !userOrders.isEmpty()) { %>
+                            <% for (Order order : userOrders) {%>
+                            <tr class="hover:bg-gray-50 text-center">
+                                <td class="border-b p-3"><%= order.getOrderNo()%></td>
+                                <td class="border-b p-3"><%= order.getOrderDate().toLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))%></td>
+                                <td class="border-b p-3">
+                                    <span class="<%= order.getOrderStatus()%>"><%= order.getOrderStatus()%></span>
+                                </td>
+                                <td class="border-b p-3">Rs <%= String.format("%.2f", order.getAmount())%></td>
+                            </tr>
+                            <% } %>
+                            <% } else { %>
+                            <tr class="text-center">
+                                <td colspan="4" class="border-b p-3 text-gray-500">No orders found</td>
+                            </tr>
+                            <% }%>
+                        </tbody>
+
+                    </table>
+                </div>
             </div>
 
             <!-- Address Book Section -->
@@ -181,21 +274,19 @@
             const editButton = document.getElementById('edit-profile');
             const saveButton = document.getElementById('save-profile');
             const inputs = document.querySelectorAll('#name, #email, #phone');
-
             editButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                inputs.forEach(input => input.removeAttribute('readonly'));
-                editButton.classList.add('hidden');
-                saveButton.classList.remove('hidden');
+            e.preventDefault();
+            inputs.forEach(input => input.removeAttribute('readonly'));
+            editButton.classList.add('hidden');
+            saveButton.classList.remove('hidden');
             });
-
             saveButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                inputs.forEach(input => input.setAttribute('readonly', true));
-                editButton.classList.remove('hidden');
-                saveButton.classList.add('hidden');
-                // Add code to save changes to the server here
-                alert('Profile updated successfully!');
+            e.preventDefault();
+            inputs.forEach(input => input.setAttribute('readonly', true));
+            editButton.classList.remove('hidden');
+            saveButton.classList.add('hidden');
+            // Add code to save changes to the server here
+            alert('Profile updated successfully!');
             });
         </script>
     </body>
