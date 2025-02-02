@@ -167,7 +167,7 @@
                     <p>Cash On Delivery</p>
                 </div>
                 <button id="placeOrderBtn" class="bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 px-4 mt-4 hidden" 
-                        onclick="window.location.href='place_order.jsp'"
+                        onclick="window.location.href = 'place_order.jsp'"
                         <%=total == 0 ? "disabled" : ""%>>
                     Place order
                 </button>

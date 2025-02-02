@@ -175,12 +175,7 @@
                     </table>
                 </div>
             </div>
-
-
-
-            <!-- Address Book Section (as previously defined) -->
         </div>
-
         <jsp:include page="footer.jsp"/>
     </body>
 </html>

@@ -165,8 +165,7 @@
                 %>
             </div>
         </div>
-
-
+            
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
 

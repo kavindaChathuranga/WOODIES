@@ -13,28 +13,28 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession session = request.getSession(false);
         Connection conn = null;
-        
+
         try {
             conn = DbConnector.getConnection();
-            
+
             // Clear remember-me token if it exists
             AuthenticationManager.clearRememberMeToken(request, response, conn);
-            
+
             // Invalidate session
             if (session != null) {
                 session.invalidate();
             }
-            
+
             // Redirect to login page
             response.sendRedirect("login.jsp");
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             // Even if there's an error, try to redirect to login
@@ -49,7 +49,7 @@ public class LogoutServlet extends HttpServlet {
             }
         }
     }
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

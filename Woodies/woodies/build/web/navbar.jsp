@@ -69,28 +69,25 @@
                 const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
                 let hideTimeout;
 
-                // Show dropdown on hover
                 categoryDropdown.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel any hide delay
-                    dropdownContent.classList.add('show'); // Show dropdown
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
                 });
 
-                // Hide dropdown with delay on mouse leave
                 categoryDropdown.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
 
-                // Keep the dropdown visible when hovering over the dropdown itself
                 dropdownContent.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel hide delay
+                    clearTimeout(hideTimeout);
                 });
 
                 dropdownContent.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
             </script>
         </header>

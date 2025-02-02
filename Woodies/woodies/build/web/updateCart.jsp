@@ -25,8 +25,12 @@
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
-        if (pstmt != null) pstmt.close();
-        if (con != null) con.close();
+        if (pstmt != null) {
+            pstmt.close();
+        }
+        if (con != null) {
+            con.close();
+        }
     }
 
     response.sendRedirect("cart.jsp");

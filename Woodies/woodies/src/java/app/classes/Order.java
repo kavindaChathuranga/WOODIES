@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Order {
+
     private String orderId;
     private LocalDateTime orderDate;
     private double totalAmount;
@@ -19,23 +20,23 @@ public class Order {
     public String getOrderId() {
         return orderId;
     }
-    
+
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
-    
+
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
-    
+
     public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
-    
+
     public double getTotalAmount() {
         return totalAmount;
     }
-    
+
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
@@ -64,20 +65,20 @@ public class Order {
     public void setProductId(int productId) {
         this.productId = productId;
     }
-    
+
     // Updated getUserOrders method to fetch from order_items
     public static List<Order> getUserOrders(Connection con, User user) {
         List<Order> orders = new ArrayList<>();
-        String query = "SELECT o.order_id, o.order_date, o.total_amount, " +
-                      "oi.product_id, oi.quantity, oi.price " +
-                      "FROM orders o " +
-                      "JOIN order_items oi ON o.order_id = oi.order_id " +
-                      "WHERE o.user_id = ? " +
-                      "ORDER BY o.order_date DESC";
-        
+        String query = "SELECT o.order_id, o.order_date, o.total_amount, "
+                + "oi.product_id, oi.quantity, oi.price "
+                + "FROM orders o "
+                + "JOIN order_items oi ON o.order_id = oi.order_id "
+                + "WHERE o.user_id = ? "
+                + "ORDER BY o.order_date DESC";
+
         try (PreparedStatement stmt = con.prepareStatement(query)) {
             stmt.setInt(1, user.getId());
-            
+
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     Order order = new Order();
@@ -93,7 +94,7 @@ public class Order {
         } catch (SQLException e) {
             Logger.getLogger(Order.class.getName()).log(Level.SEVERE, "Error fetching user orders", e);
         }
-        
+
         return orders;
     }
 }

@@ -2,7 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-                                                                                                                                                         login
+                                                                                                                                                                 login
         
 
         
@@ -39,30 +39,8 @@
         
         
         
-        <group>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/shop.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/product.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/signup.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/Order.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/registration.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/MD5.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/checkout.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/DbConnector.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/Products.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/login_back.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/logout.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/admin_registration.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/login.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/cart.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/UpdateProfileServlet.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/home.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/User.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/index.html</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/admin.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/user_dash.jsp</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/AuthenticationManager.java</file>
-            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/garden.jsp</file>
-        </group>
+        
+        
         <group>
             <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/shop.jsp</file>
             <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/updateCart.jsp</file>
@@ -85,6 +63,48 @@
             <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/user_dash.jsp</file>
             <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/removeFromCart.jsp</file>
             <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/AuthenticationManager.java</file>
+        </group>
+        <group>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/navbar.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/homeandliving.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/OrderItem.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/place_order.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/LogoutServlet.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/Order.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/index.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/footer.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/MD5.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/checkout.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/BillingDetails.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/Products.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/logout.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/login.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/UpdateProfileServlet.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/PlaceOrderServlet.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/home.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/updateProduct.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/kitchenanddining.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/admin.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/user_dash.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/shop.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/updateCart.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/addToCart.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/style.css</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/product.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/signup.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/registration.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/admin_back.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/OrderDetails.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/deleteProduct.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/DbConnector.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/login_back.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/cart.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/User.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/admin/processUpdate.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/Cart.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/removeFromCart.jsp</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/src/java/app/classes/AuthenticationManager.java</file>
+            <file>file:/D:/University/semester%205/RAPID/woodies%20project/Woodies/woodies/web/garden.jsp</file>
         </group>
     </open-files>
 </project-private>

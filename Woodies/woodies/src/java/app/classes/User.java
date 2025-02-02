@@ -119,7 +119,6 @@ public class User {
         }
     }
 
-
     public boolean updateProfile(Connection con) {
         try {
             String query = "UPDATE user SET firstName=?, lastName=?, email=? WHERE id=?";

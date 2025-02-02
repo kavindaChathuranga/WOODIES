@@ -22,9 +22,9 @@ public class UpdateProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         Integer userId = (Integer) request.getSession().getAttribute("user_id");
-        
+
         if (userId == null) {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             return;
@@ -43,13 +43,13 @@ public class UpdateProfileServlet extends HttpServlet {
             pstmt.setInt(4, userId);
 
             int result = pstmt.executeUpdate();
-            
+
             if (result > 0) {
                 response.setStatus(HttpServletResponse.SC_OK);
             } else {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

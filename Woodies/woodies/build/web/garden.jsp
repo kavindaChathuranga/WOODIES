@@ -79,24 +79,23 @@
                 let hideTimeout;
 
                 categoryDropdown.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); 
+                    clearTimeout(hideTimeout);
                     dropdownContent.classList.add('show');
                 });
 
                 categoryDropdown.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
                         dropdownContent.classList.remove('show');
-                    }, 200); 
+                    }, 200);
                 });
 
                 dropdownContent.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); 
-
-                dropdownContent.addEventListener('mouseleave', () => {
-                    hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); 
-                    }, 200);
-                });
+                clearTimeout(hideTimeout);
+                        dropdownContent.addEventListener('mouseleave', () => {
+                        hideTimeout = setTimeout(() => {
+                        dropdownContent.classList.remove('show');
+                        }, 200);
+                        });
             </script>
         </header>
 

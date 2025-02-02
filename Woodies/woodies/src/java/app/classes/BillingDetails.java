@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BillingDetails {
+
     private int id;
     private int userId;
     private String firstName;
@@ -19,52 +20,113 @@ public class BillingDetails {
     private Timestamp createdAt;
 
     // Constructors
-    public BillingDetails() {}
+    public BillingDetails() {
+    }
 
     // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public int getUserId() { return userId; }
-    public void setUserId(int userId) { this.userId = userId; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public int getUserId() {
+        return userId;
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-    public String getCompanyName() { return companyName; }
-    public void setCompanyName(String companyName) { this.companyName = companyName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public String getProvince() { return province; }
-    public void setProvince(String province) { this.province = province; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public String getZipCode() { return zipCode; }
-    public void setZipCode(String zipCode) { this.zipCode = zipCode; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public String getCompanyName() {
+        return companyName;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
-    public String getAdditionalInfo() { return additionalInfo; }
-    public void setAdditionalInfo(String additionalInfo) { this.additionalInfo = additionalInfo; }
+    public String getAddress() {
+        return address;
+    }
 
-    public Timestamp getCreatedAt() { return createdAt; }
-    public void setCreatedAt(Timestamp createdAt) { this.createdAt = createdAt; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
 
     // Database operations
     public boolean save(Connection conn) {
         try {
-            String query = "INSERT INTO billing_details (user_id, first_name, last_name, company_name, " +
-                          "address, province, zip_code, phone, email, additional_info) " +
-                          "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            
+            String query = "INSERT INTO billing_details (user_id, first_name, last_name, company_name, "
+                    + "address, province, zip_code, phone, email, additional_info) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1, this.userId);
             pstmt.setString(2, this.firstName);
@@ -89,7 +151,7 @@ public class BillingDetails {
             String query = "SELECT * FROM billing_details WHERE user_id = ? ORDER BY created_at DESC LIMIT 1";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1, userId);
-            
+
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 BillingDetails billing = new BillingDetails();

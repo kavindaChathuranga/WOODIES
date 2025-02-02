@@ -1,3 +1,4 @@
+
 import app.classes.Cart;
 import app.classes.DbConnector;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/PlaceOrderServlet")
 public class PlaceOrderServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
@@ -62,8 +64,12 @@ public class PlaceOrderServlet extends HttpServlet {
             response.getWriter().write("{\"success\": false, \"message\": \"" + e.getMessage() + "\"}");
         } finally {
             try {
-                if (pst != null) pst.close();
-                if (con != null) con.close();
+                if (pst != null) {
+                    pst.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

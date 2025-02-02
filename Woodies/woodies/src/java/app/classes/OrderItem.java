@@ -9,6 +9,7 @@ package app.classes;
  * @author Kavinda
  */
 public class OrderItem {
+
     private String orderId;
     private String productName;
     private String imageUrl;
@@ -24,10 +25,23 @@ public class OrderItem {
     }
 
     // Getters
-    public String getOrderId() { return orderId; }
-    public String getProductName() { return productName; }
-    public String getImageUrl() { return imageUrl; }
-    public int getQuantity() { return quantity; }
-    public double getPrice() { return price; }
-}
+    public String getOrderId() {
+        return orderId;
+    }
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}

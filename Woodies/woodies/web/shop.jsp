@@ -37,7 +37,7 @@
                 }
 
                 .dropdown:hover .dropdown-text {
-                    color: #F59E0B; /* This is the hover color for CATEGORY */
+                    color: #F59E0B;
                 }
             </style>
             <div class="bg-[#faf7f0] w-screen">
@@ -162,7 +162,9 @@
                 %>
             </div>
         </div>
+
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
+
     </body>
 </html>
