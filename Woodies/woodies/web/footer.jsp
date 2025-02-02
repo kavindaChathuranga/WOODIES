@@ -14,9 +14,9 @@
         <div>
             <h3 class="text-lg font-semibold text-gray-600">Links</h3>
             <ul class="mt-2 text-sm text-gray-600">
-                <li><a href="home.jsp" class="hover:text-gray-300">Home</a></li>
-                <li><a href="shop.jsp" class="hover:text-gray-300">Shop</a></li>
-                <li><a href="about.jsp" class="hover:text-gray-300">About</a></li>
+                <li><a href="home.jsp" class="hover:text-yellow-500">Home</a></li>
+                <li><a href="shop.jsp" class="hover:text-yellow-500">Shop</a></li>
+                <li><a href="about.jsp" class="hover:text-yellow-500">About</a></li>
             </ul>
         </div>
         <!-- Stay Connected Section -->

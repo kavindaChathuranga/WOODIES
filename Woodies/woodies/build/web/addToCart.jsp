@@ -1,35 +1,31 @@
-<%@page import="app.classes.*"%>
-<%@page import="java.sql.Connection"%>
+<%-- 
+    Document   : addToCart
+    Created on : Feb 2, 2025, 2:18:59 AM
+    Author     : chanu
+--%>
+
+<%@page import="java.sql.*"%>
+<%@page import="app.classes.DbConnector"%>
 <%
-    String productId = request.getParameter("productId");
+    int productId = Integer.parseInt(request.getParameter("productId"));
+    int userId = 1;
+
     Connection con = null;
-    
-    if (productId != null && !productId.isEmpty()) {
-        try {
-            con = DbConnector.getConnection();
-            Cart cart = new Cart();
-            
-            Integer userId = (Integer) session.getAttribute("userId");
-            if (userId == null) {
-                userId = 1;
-            }
-            
-            cart.addToCart(con, userId, Integer.parseInt(productId));
-            response.sendRedirect("cart.jsp");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("product.jsp?id=" + productId);
-        } finally {
-            if (con != null) {
-                try {
-                    con.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    } else {
-        response.sendRedirect("home.jsp");
+    PreparedStatement pstmt = null;
+
+    try {
+        con = DbConnector.getConnection();
+        String sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, 1) ON DUPLICATE KEY UPDATE quantity = quantity + 1";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, userId);
+        pstmt.setInt(2, productId);
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (pstmt != null) pstmt.close();
+        if (con != null) con.close();
     }
+
+    response.sendRedirect("cart.jsp");
 %>

@@ -1,8 +1,61 @@
-<%@page import="app.classes.Cart"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="app.classes.DbConnector"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="app.classes.Products"%>
+<%
+    int userId = 1;
+    List<Products> cartItems = new ArrayList<Products>();
+    double total = 0;
+
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    try {
+        con = DbConnector.getConnection();
+        // Fetch the quantity the user wants to buy from the cart table
+        String sql = "SELECT p.*, c.quantity AS cart_quantity FROM cart c JOIN products p ON c.product_id = p.product_id WHERE c.user_id = ?";
+        pstmt = con.prepareStatement(sql);
+        pstmt.setInt(1, userId);
+        rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Products product = new Products();
+            product.setProduct_id(rs.getInt("product_id"));
+            product.setName(rs.getString("name"));
+            product.setPrice(rs.getDouble("price"));
+            product.setQuantity(rs.getInt("cart_quantity"));
+            product.setImage_url(rs.getString("image_url"));
+            cartItems.add(product);
+            total += product.getPrice() * product.getQuantity();
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (pstmt != null) {
+            try {
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +67,86 @@
     </head>
     <body>
         <!-- Navbar -->
-        <jsp:include page="navbar.jsp"/>
+        <header class="bg-white shadow">
+            <!-- Internal CSS -->
+            <style>
+                .dropdown-content {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+                }
+
+                .dropdown-content.show {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .dropdown:hover .dropdown-text {
+                    color: #F59E0B; /* This is the hover color for CATEGORY */
+                }
+            </style>
+            <div class="bg-[#faf7f0] w-screen">
+                <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <!-- Logo -->
+                    <a href="home.jsp" class="inline-block transform transition duration-200 hover:scale-105 hover:shadow-md hover:opacity-90 active:scale-95">
+                        <img src="resources/images/logo/woodies_logo.png" alt="Logo" class="h-10 w-auto" />
+                    </a>
+                    <!-- Navigation list -->
+                    <nav class="flex items-center space-x-6">
+                        <a href="checkout.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
+                        <!-- Category with Dropdown -->
+                        <div class="relative dropdown" id="categoryDropdown">
+                            <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
+                            <div class="absolute left-0 flex-col bg-white border border-gray-200 rounded shadow-lg mt-2 z-50 min-w-[200px] dropdown-content">
+                                <a href="homeandliving.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">
+                                    Home & Living Shelves
+                                </a>
+                                <a href="kitchenanddining.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Kitchen & Dining Shelves</a>
+                                <a href="garden.jsp" class="block px-4 py-2 text-gray-700 hover:text-yellow-500 hover:bg-yellow-100 bg-opacity-30">Garden Shelves</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Right Icons -->
+                    <div class="flex items-center space-x-4">
+                        <a href="cart.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">
+                            <i class="fas fa-shopping-cart h-6 w-6"></i>
+                        </a>
+                        <a href="user_dash.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">
+                            <i class="fas fa-user h-6 w-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal JavaScript -->
+            <script>
+                const categoryDropdown = document.getElementById('categoryDropdown');
+                const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
+                let hideTimeout;
+
+                categoryDropdown.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
+                });
+
+                categoryDropdown.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        dropdownContent.classList.remove('show');
+                    }, 200);
+                });
+
+                dropdownContent.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                });
+
+                dropdownContent.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        dropdownContent.classList.remove('show');
+                    }, 200);
+                });
+            </script>
+        </header>
 
         <!-- Banner Section -->
         <div class="relative">
@@ -29,7 +161,6 @@
 
         <!-- Cart Section -->
         <div class="container mx-auto px-4 py-8 mt-16 mb-16">
-            <h1 class="text-3xl font-semibold text-center mb-6">Your Cart</h1>
             <div class="flex flex-col lg:flex-row gap-8">
                 <!-- Cart Items -->
                 <div class="w-full lg:w-2/3 overflow-x-auto">
@@ -44,70 +175,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                Integer userId = (Integer) session.getAttribute("userId");
-                                if (userId == null) {
-                                    userId = 1; // Default user ID for non-logged in users
-                                }
-                                
-                                double total = 0;
-                                Connection con = null;
-                                
-                                try {
-                                    con = DbConnector.getConnection();
-                                    Cart cart = new Cart();
-                                    List<Cart> cartItems = cart.getCartItems(con, userId);
-                                    
-                                    if (cartItems.isEmpty()) {
-                            %>
-                                        <tr>
-                                            <td colspan="5" class="text-center py-4 text-gray-500">
-                                                Your cart is empty
-                                            </td>
-                                        </tr>
-                            <%
-                                    } else {
-                                        for (Cart item : cartItems) {
-                                            double subtotal = item.getPrice() * item.getQuantity();
-                                            total += subtotal;
-                            %>
-                                            <tr id="cart-row-<%=item.getCart_id()%>" class="border-b">
-                                                <td class="flex items-center px-4 py-2">
-                                                    <img src="<%=item.getImage_url()%>" 
-                                                         alt="<%=item.getProductName()%>" 
-                                                         class="h-16 w-16 object-cover rounded mr-2">
-                                                    <span><%=item.getProductName()%></span>
-                                                </td>
-                                                <td class="px-4 py-2">Rs. <%=String.format("%.2f", item.getPrice())%></td>
-                                                <td class="px-4 py-2 text-center">
-                                                    <input type="number" 
-                                                           value="<%=item.getQuantity()%>" 
-                                                           min="1" 
-                                                           class="w-16 border rounded text-center"
-                                                           onchange="updateQuantity(<%=item.getCart_id()%>, this.value, <%=item.getPrice()%>)">
-                                                </td>
-                                                <td id="subtotal-<%=item.getCart_id()%>" class="px-4 py-2 text-right">
-                                                    Rs. <%=String.format("%.2f", subtotal)%>
-                                                </td>
-                                                <td class="px-4 py-2 text-center">
-                                                    <button onclick="removeItem(<%=item.getCart_id()%>)" class="text-yellow-500 hover:text-red-500">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                            <%
-                                        }
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                } finally {
-                                    try {
-                                        if (con != null) con.close();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            %>
+                            <% for (Products item : cartItems) {%>
+                            <tr class="border-b">
+                                <td class="flex items-center px-4 py-2">
+                                    <img src="<%= item.getImage_url()%>" alt="Product Image" class="h-16 w-16 object-cover rounded mr-2">
+                                    <span><%= item.getName()%></span>
+                                </td>
+                                <td class="px-4 py-2">$<%= String.format("%.2f", item.getPrice())%></td>
+                                <td class="px-4 py-2 text-center">
+                                    <form action="updateCart.jsp" method="post" class="inline">
+                                        <input type="hidden" name="productId" value="<%= item.getProduct_id()%>">
+                                        <input type="number" name="quantity" value="<%= item.getQuantity()%>" min="1" class="w-12 border rounded text-center">
+                                        <button type="submit" class="bg-yellow-500 text-white px-2 py-1 rounded">Update</button>
+                                    </form>
+                                </td>
+                                <td class="px-4 py-2 text-right">Rs <%= String.format("%.2f", item.getPrice() * item.getQuantity())%></td>
+                                <td class="px-4 py-2 text-center">
+                                    <form action="removeFromCart.jsp" method="post" class="inline">
+                                        <input type="hidden" name="productId" value="<%= item.getProduct_id()%>">
+                                        <button type="submit" class="text-yellow-500 hover:text-red-500">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }%>
                         </tbody>
                     </table>
                 </div>
@@ -117,26 +209,24 @@
                     <h2 class="text-xl font-semibold mb-4">Cart Totals</h2>
                     <div class="mb-4 flex justify-between">
                         <span>Subtotal</span>
-                        <span id="cart-subtotal">Rs. <%=String.format("%.2f", total)%></span>
+                        <span>Rs <%= String.format("%.2f", total)%></span>
                     </div>
                     <hr class="border-t border-gray-300 my-2">
                     <div class="flex justify-between font-bold text-lg">
                         <span>Total</span>
-                        <span id="cart-total" class="text-yellow-500">Rs. <%=String.format("%.2f", total)%></span>
+                        <span class="text-yellow-500">Rs <%= String.format("%.2f", total)%></span>
                     </div>
-                    <% if (total > 0) { %>
-                        <a href="checkout.jsp">
-                            <button class="w-full mt-6 bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">
-                                Check Out
-                            </button>
-                        </a>
-                    <% } %>
+                    <a href="checkout.jsp">
+                        <button class="w-full mt-6 bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">
+                            Check Out
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Features Section -->
-        <section class="bg-[#faf7f0] py-10 border-t border-gray-200">
+        <section class="bg-[#faf7f0] py-10 border-t border-gray-200 mt-12 mb-12">
             <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <!-- Feature 1 -->
                 <div class="flex items-center md:items-start">
@@ -183,124 +273,5 @@
 
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
-
-
-        <!-- Replace the entire existing script section with the new code -->
-        <script>
-            function updateQuantity(cartId, quantity, price) {
-                // Ensure quantity is at least 1
-                quantity = Math.max(1, parseInt(quantity));
-
-                fetch('updateCart.jsp', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `cartId=${cartId}&quantity=${quantity}`
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if(data.success) {
-                        // Update the subtotal for this item
-                        const subtotalCell = document.getElementById(`subtotal-${cartId}`);
-                        const subtotal = price * quantity;
-                        subtotalCell.textContent = `Rs. ${subtotal.toFixed(2)}`;
-
-                        // Update cart totals
-                        updateCartTotal();
-                    } else {
-                        throw new Error(data.error || 'Failed to update quantity');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Failed to update quantity. Please try again.');
-                });
-            }
-
-            function removeItem(cartId) {
-                if (!confirm('Are you sure you want to remove this item from your cart?')) {
-                    return;
-                }
-
-                fetch('updateCart.jsp', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `cartId=${cartId}&action=remove`
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if(data.success) {
-                        // Remove the row from the table
-                        const row = document.getElementById(`cart-row-${cartId}`);
-                        if (row) {
-                            row.remove();
-
-                            // Update cart totals
-                            updateCartTotal();
-
-                            // Check if cart is empty
-                            const tbody = document.querySelector('tbody');
-                            const remainingRows = tbody.querySelectorAll('tr');
-                            if (remainingRows.length === 0) {
-                                tbody.innerHTML = `
-                                    <tr>
-                                        <td colspan="5" class="text-center py-4 text-gray-500">
-                                            Your cart is empty
-                                        </td>
-                                    </tr>
-                                `;
-
-                                // Hide checkout button if cart is empty
-                                const checkoutButton = document.querySelector('a[href="checkout.jsp"]');
-                                if (checkoutButton) {
-                                    checkoutButton.style.display = 'none';
-                                }
-                            }
-                        }
-                    } else {
-                        throw new Error(data.error || 'Failed to remove item');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Failed to remove item. Please try again.');
-                });
-            }
-
-            function updateCartTotal() {
-                // Get all subtotal cells
-                const subtotalCells = document.querySelectorAll('[id^="subtotal-"]');
-                let total = 0;
-
-                // Calculate total from all visible subtotal cells
-                subtotalCells.forEach(cell => {
-                    const value = parseFloat(cell.textContent.replace('Rs. ', ''));
-                    if (!isNaN(value)) {
-                        total += value;
-                    }
-                });
-
-                // Update the subtotal and total displays
-                const subtotalDisplay = document.getElementById('cart-subtotal');
-                const totalDisplay = document.getElementById('cart-total');
-
-                if (subtotalDisplay) {
-                    subtotalDisplay.textContent = `Rs. ${total.toFixed(2)}`;
-                }
-                if (totalDisplay) {
-                    totalDisplay.textContent = `Rs. ${total.toFixed(2)}`;
-                }
-
-                // Show/hide checkout button based on total
-                const checkoutButton = document.querySelector('a[href="checkout.jsp"]');
-                if (checkoutButton) {
-                    checkoutButton.style.display = total > 0 ? 'block' : 'none';
-                }
-            }
-        </script>
-
     </body>
 </html>

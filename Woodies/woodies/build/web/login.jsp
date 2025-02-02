@@ -25,9 +25,9 @@
                 <div class="p-8">
                     <form method="POST" action="login_back.jsp" class="flex flex-col h-full justify-center items-center text-center">
                         <h1 class="font-bold text-2xl mb-4">Sign In</h1>  
-                        <%                                                      
-                            if(request.getParameter("s")!=null){
-                                if(request.getParameter("s").equals("0")){
+                        <%
+                            if (request.getParameter("s") != null) {
+                                if (request.getParameter("s").equals("0")) {
                         %>
                         <h6 style='color:red'>Incorrect username or password</h6>
                         <%
@@ -40,14 +40,11 @@
                             <input type="password" placeholder="Password" name="password" class="bg-gray-100 border-none py-3 px-4 mb-4 w-full rounded-3xl focus:outline-none focus:ring-2 focus:ring-yellow-500" id="signinPassword" required/>
                             <i id="signinTogglePassword"></i>
                         </div>
-                        
+
                         <div class="flex items-center w-full mb-4">
                             <input type="checkbox" name="remember_me" id="rememberMe" class="mr-2">
                             <label for="rememberMe" class="text-gray-700 text-sm">Remember Me</label>
-                        </div>
-                        
-                        <a href="#" class="text-gray-700 text-sm no-underline mb-5">Forgot your password?</a>
-                        
+                        </div>                                   
                         <button type="submit" class="rounded-full border border-yellow-500 bg-yellow-500 text-white text-base font-bold py-3 px-11 uppercase tracking-wide transition hover:bg-yellow-600 mb-5">Sign In</button>
                     </form>
                 </div>
@@ -58,7 +55,7 @@
             const signinTogglePassword = document.getElementById('signinTogglePassword');
             const signinPassword = document.getElementById('signinPassword');
 
-            signinTogglePassword.addEventListener('click', function() {
+            signinTogglePassword.addEventListener('click', function () {
                 const type = signinPassword.getAttribute('type') === 'password' ? 'text' : 'password';
                 signinPassword.setAttribute('type', type);
                 this.classList.toggle('fa-eye');

@@ -1,3 +1,9 @@
+<%-- 
+    Document   : admin_back
+    Created on : Jan 31, 2025, 11:55:15 AM
+    Author     : chanu
+--%>
+
 <%@page import="app.classes.DbConnector" %>
 <%@page import="app.classes.Products" %> 
 

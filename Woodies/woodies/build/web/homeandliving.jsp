@@ -1,8 +1,12 @@
 <%-- 
-    Document   : homeandliving
-    Created on : Dec 10, 2024, 11:48:08 AM
+    Document   : kitchenanddining
+    Created on : Dec 10, 2024, 11:48:47 AM
     Author     : Kavinda
 --%>
+<%@page import="app.classes.DbConnector"%>
+<%@page import="app.classes.Products"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.util.List"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,7 +47,6 @@
                     <nav class="flex items-center space-x-6">
                         <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
-                        <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -111,8 +114,58 @@
             </div>
         </div>
 
+        <div class="max-w-6xl mx-auto p-6 mt-12">
 
-        <h1><center>Home & Living</center></h1>
+            <!-- Product Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-16">
+                <%
+                    Connection con = null;
+                    try {
+                        con = DbConnector.getConnection();
+                        Products productsObj = new Products();
+                        List<Products> categoryProducts = productsObj.getProductsByCategory(con, "Home and Living Shelves");
+
+                        if (categoryProducts.isEmpty()) {
+                %>
+                <div class="col-span-full text-center text-gray-500">
+                    No products found in this category.
+                </div>
+                <%
+                } else {
+                    for (Products p : categoryProducts) {
+                %>
+                <a href="product.jsp?id=<%=p.getProduct_id()%>" 
+                   class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom">
+                    <div class="relative">
+                        <img src="<%=p.getImage_url()%>" 
+                             alt="<%=p.getName()%>" 
+                             class="w-full h-48 object-cover"/>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900"><%=p.getName()%></h3>
+                        <p class="mt-1 text-xs text-gray-500"><%=p.getCategory()%></p>
+                        <p class="mt-1 text-sm font-medium text-gray-900">Rs. <%=String.format("%.2f", p.getPrice())%></p>
+                    </div>
+                </a>
+                <%
+                            }
+                        }
+                    } catch (Exception e) {
+                        out.println("<div class='col-span-full text-center text-red-500'>Error loading products: " + e.getMessage() + "</div>");
+                        e.printStackTrace();
+                    } finally {
+                        if (con != null) {
+                            try {
+                                con.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                %>
+            </div>
+        </div>
+
 
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>

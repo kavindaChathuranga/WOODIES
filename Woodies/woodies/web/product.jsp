@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : product
     Created on : Jan 31, 2025, 12:19:30 PM
@@ -13,26 +12,26 @@
     String productId = request.getParameter("id");
     Products product = null;
     Connection con = null;
-    
-    if(productId != null) {
+
+    if (productId != null) {
         try {
             con = DbConnector.getConnection();
             // Add a new method to Products class to get a single product
             Products productObj = new Products();
             List<Products> allProducts = productObj.getAllProducts(con);
-            for(Products p : allProducts) {
-                if(p.getProduct_id() == Integer.parseInt(productId)) {
+            for (Products p : allProducts) {
+                if (p.getProduct_id() == Integer.parseInt(productId)) {
                     product = p;
                     break;
                 }
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(con != null) {
+            if (con != null) {
                 try {
                     con.close();
-                } catch(Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -77,10 +76,8 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
-                        <a href="shop.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">SHOP</a>
-                        <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">product</a>
+                        <a href="checkout.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="shop.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">SHOP</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -105,35 +102,31 @@
                 </div>
             </div>
 
-
             <!-- Internal JavaScript -->
             <script>
                 const categoryDropdown = document.getElementById('categoryDropdown');
                 const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
                 let hideTimeout;
 
-                // Show dropdown on hover
                 categoryDropdown.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel any hide delay
-                    dropdownContent.classList.add('show'); // Show dropdown
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
                 });
 
-                // Hide dropdown with delay on mouse leave
                 categoryDropdown.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
 
-                // Keep the dropdown visible when hovering over the dropdown itself
                 dropdownContent.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel hide delay
+                    clearTimeout(hideTimeout);
                 });
 
                 dropdownContent.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
             </script>
         </header>
@@ -147,19 +140,19 @@
                     <p class="text-gray-600 mt-4"><%=product != null ? product.getDescription() : "No description available"%></p>
                     <p class="text-2xl font-semibold text-yellow-500 mt-4">Rs. <%=product != null ? String.format("%.2f", product.getPrice()) : "0.00"%></p>
                     <p class="text-gray-600 mt-2">Stock: <%=product != null ? product.getQuantity() : "0"%></p>
-                    <% if(product != null) { %>
-                        <form action="AddToCartServlet" method="post" class="mt-6 inline-block mr-4">
-                            <input type="hidden" name="productId" value="<%=product.getProduct_id()%>">
-                            <button type="submit" class="bg-white text-black border-2 border-gray-600 rounded-3xl px-6 py-2 hover:bg-transparent hover:border-gray-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300">
-                                Add to Cart
-                            </button>
-                        </form>
-                        <form action="BuyNowServlet" method="post" class="mt-6 inline-block">
-                            <input type="hidden" name="productId" value="<%=product.getProduct_id()%>">
-                            <button type="submit" class="bg-white text-black border-2 border-gray-600 rounded-3xl px-6 py-2 hover:bg-transparent hover:border-gray-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300">
-                                Buy Now
-                            </button>
-                        </form>
+                    <% if (product != null) {%>
+                    <form action="${pageContext.request.contextPath}/addToCart.jsp" method="post" class="mt-6 inline-block mr-4">
+                        <input type="hidden" name="productId" value="<%=product.getProduct_id()%>">
+                        <button type="submit" class="bg-white text-black border-2 border-gray-600 rounded-3xl px-6 py-2 hover:bg-transparent hover:border-gray-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300">
+                            Add to Cart
+                        </button>
+                    </form>
+                    <form action="${pageContext.request.contextPath}/addToCart.jsp" method="post" class="mt-6 inline-block">
+                        <input type="hidden" name="productId" value="<%=product.getProduct_id()%>">
+                        <button type="submit" class="bg-white text-black border-2 border-gray-600 rounded-3xl px-6 py-2 hover:bg-transparent hover:border-gray-400 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300">
+                            Buy Now
+                        </button>
+                    </form>
                     <% } %>
                 </div>
             </div>
@@ -194,26 +187,23 @@
                 </div>
             </div>
 
-
-
-            
             <!-- Container -->
-            <div class="container mx-auto mb-6 mt-12 px-6 py-10">
-                <h2 class="text-3xl font-bold text-gray-800 mb-10">Related Products</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mt-10 mb-10">Related Products</h2>
 
                 <!-- Product Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <%
-                        if(product != null) {
-                            List<Products> relatedProducts = new Products().getRelatedProducts(DbConnector.getConnection(), product.getCategory(), product.getProduct_id());
-                            for(Products relatedProduct : relatedProducts) {
-                    %>
+                <div class="max-w-6xl mx-auto p-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
+                        <%
+                            if (product != null) {
+                                List<Products> relatedProducts = new Products().getRelatedProducts(DbConnector.getConnection(), product.getCategory(), product.getProduct_id());
+                                for (Products relatedProduct : relatedProducts) {
+                        %>
                         <a href="product.jsp?id=<%=relatedProduct.getProduct_id()%>" 
                            class="block bg-white shadow-lg rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-2xl duration-300">
                             <div class="relative">
                                 <img src="<%=relatedProduct.getImage_url()%>" 
                                      alt="<%=relatedProduct.getName()%>" 
-                                     class="w-full h-56 object-cover">
+                                     class="w-full h-36 object-cover">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold text-gray-800"><%=relatedProduct.getName()%></h3>
@@ -221,14 +211,15 @@
                                 <p class="text-lg font-bold text-yellow-500">Rs. <%=String.format("%.2f", relatedProduct.getPrice())%></p>
                             </div>
                         </a>
-                    <%
+                        <%
                             }
                         } else {
-                    %>
+                        %>
                         <p class="col-span-4 text-center text-gray-500">No related products found</p>
-                    <%
-                        }
-                    %>
+                        <%
+                            }
+                        %>
+                    </div>
                 </div>
             </div>
         </main>
@@ -236,5 +227,5 @@
         <!-- Footer -->
         <jsp:include page="footer.jsp"/>
 
-    </body>
+         </body>
 </html>

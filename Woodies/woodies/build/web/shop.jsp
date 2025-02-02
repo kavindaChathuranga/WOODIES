@@ -39,12 +39,6 @@
                 .dropdown:hover .dropdown-text {
                     color: #F59E0B; /* This is the hover color for CATEGORY */
                 }
-                .card-zoom img {
-                    transition: transform 0.3s ease;
-                }
-                .card-zoom:hover img {
-                    transform: scale(1.05);
-                }
             </style>
             <div class="bg-[#faf7f0] w-screen">
                 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -54,10 +48,8 @@
                     </a>
                     <!-- Navigation list -->
                     <nav class="flex items-center space-x-6">
-                        <a href="home.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
+                        <a href="checkout.jsp" class="text-gray-700 bg-opacity-30 hover:text-yellow-500 bg-opacity-30">HOME</a>
                         <a href="shop.jsp" class="text-yellow-500 hover:text-yellow-500 bg-opacity-30">SHOP</a>
-                        <a href="about.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">ABOUT</a>
-                        <a href="product.jsp" class="text-gray-700 hover:text-yellow-500 bg-opacity-30">product</a>
                         <!-- Category with Dropdown -->
                         <div class="relative dropdown" id="categoryDropdown">
                             <a href="#" class="text-gray-700 hover:text-yellow-500 bg-opacity-30 dropdown-text">CATEGORY</a>
@@ -79,7 +71,7 @@
                             <i class="fas fa-user h-6 w-6"></i>
                         </a>
                     </div>
-                </div>               
+                </div>
             </div>
 
             <!-- Internal JavaScript -->
@@ -88,28 +80,25 @@
                 const dropdownContent = categoryDropdown.querySelector('.dropdown-content');
                 let hideTimeout;
 
-                // Show dropdown on hover
                 categoryDropdown.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel any hide delay
-                    dropdownContent.classList.add('show'); // Show dropdown
+                    clearTimeout(hideTimeout);
+                    dropdownContent.classList.add('show');
                 });
 
-                // Hide dropdown with delay on mouse leave
                 categoryDropdown.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
 
-                // Keep the dropdown visible when hovering over the dropdown itself
                 dropdownContent.addEventListener('mouseenter', () => {
-                    clearTimeout(hideTimeout); // Cancel hide delay
+                    clearTimeout(hideTimeout);
                 });
 
                 dropdownContent.addEventListener('mouseleave', () => {
                     hideTimeout = setTimeout(() => {
-                        dropdownContent.classList.remove('show'); // Hide dropdown
-                    }, 200); // Delay time in milliseconds (500ms)
+                        dropdownContent.classList.remove('show');
+                    }, 200);
                 });
             </script>
         </header>
@@ -126,7 +115,7 @@
         </div>
 
         <!-- Shop Title Section -->
-        <div class="relative w-full h-48 flex items-center justify-center mb-12">
+        <div class="relative w-full h-48 flex items-center justify-center mb-2">
             <div class="text-center">
                 <h1 class="text-4xl font-bold text-gray-800 mb-2">Shop Collection</h1>
                 <p class="text-lg text-gray-600">Discover our handcrafted wooden furniture</p>
@@ -134,7 +123,6 @@
         </div>
 
         <div class="max-w-6xl mx-auto p-6">
-
             <!-- Product Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
                 <%
@@ -145,16 +133,18 @@
                         for (Products p : productList) {
                 %>
                 <!-- Product Card -->
-                <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom mt-8">
-                    <div class="relative">
-                        <img src="<%=p.getImage_url()%>" alt="<%=p.getName()%>" class="w-full h-48 object-cover"/>
+                <a href="product.jsp?id=<%=p.getProduct_id()%>" class="block">
+                    <div class="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer card-zoom mt-8">
+                        <div class="relative">
+                            <img src="<%=p.getImage_url()%>" alt="<%=p.getName()%>" class="w-full h-48 object-cover"/>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-sm font-medium text-gray-900"><%=p.getName()%></h3>
+                            <p class="mt-1 text-xs text-gray-500"><%=p.getCategory()%></p>
+                            <p class="mt-1 text-sm font-medium text-gray-900">Rs. <%=p.getPrice()%></p>
+                        </div>
                     </div>
-                    <div class="p-4">
-                        <h3 class="text-sm font-medium text-gray-900"><%=p.getName()%></h3>
-                        <p class="mt-1 text-xs text-gray-500"><%=p.getCategory()%></p>
-                        <p class="mt-1 text-sm font-medium text-gray-900">Rs. <%=p.getPrice()%></p>
-                    </div>
-                </div>
+                </a>
                 <%
                         }
                     } catch (Exception e) {
